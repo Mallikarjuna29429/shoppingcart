@@ -67,7 +67,16 @@
   font-size: 13px;
   font-weight: 800;
 }
-
+.shopping-cart {
+  background-color: rgb(13, 12, 11);
+  position: relative;
+  padding: 25px;
+  border-radius: 100px;
+  position: fixed;
+  bottom: 40px;
+  right: 10%;
+  z-index: 1;
+}
 .nav__itemBasket {
   display: flex;
   align-items: center;

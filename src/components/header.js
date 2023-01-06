@@ -49,17 +49,11 @@ function Header() {
           <span className="nav__itemLineTwo">Shop</span>
         </div>
         <Link to="/checkout" style={{ textDecoration: "none" }}>
-          {/* <div className="nav__itemBasket">
+          <div className="nav__itemBasket">
             <ShoppingBasketIcon />
-            <span className="nav__itemLineTwo nav__basketCount">
-              
-            </span>
-          </div> */}
+            <span className="nav__itemLineTwo nav__basketCount"></span>
+          </div>
         </Link>
-        <div className="shopping-cart" onClick={() => navigate("/cart")}>
-          <ShoppingCart id="cartIcon" />
-          <p>{getTotalQuantity() || 0}</p>
-        </div>
       </div>
     </div>
   );
