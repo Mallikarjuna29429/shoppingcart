@@ -1,11 +1,10 @@
 import "./item.css";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../redux/cartSlice";
-import React, { Component }  from 'react';
+import React, { Component } from "react";
 
 function Item({ id, title, image, price }) {
   const dispatch = useDispatch();
-
   return (
     <div className="item">
       <div className="item__info">
