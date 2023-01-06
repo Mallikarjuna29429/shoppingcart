@@ -65,10 +65,10 @@ function Home() {
           />
         </div>
       </div>
-      {/* <div className="shopping-cart" onClick={() => navigate("/cart")}>
+      <div className="shopping-cart" onClick={() => navigate("/cart")}>
         <ShoppingCart id="cartIcon" />
         <p>{getTotalQuantity() || 0}</p>
-      </div> */}
+      </div>
     </div>
   );
 }
