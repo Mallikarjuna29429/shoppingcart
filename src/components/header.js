@@ -1,28 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import "./header.css";
 import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
-import { ShoppingCart } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-// import { useStateValue } from "./StateProvider";
+import { SettingsInputAntenna } from "@mui/icons-material";
 
-function Header() {
-  const navigate = useNavigate();
-  const cart = useSelector((state) => state.cart);
-
-  const getTotalQuantity = () => {
-    let total = 0;
-    cart.forEach((item) => {
-      console.log(item);
-      total += item.quantity;
-    });
-    console.log(total);
-    return total;
-  };
-  // const [{ basket }, dispatch] = useStateValue();
+function Header({ setSearch }) {
   return (
     <div className="header">
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -33,7 +17,11 @@ function Header() {
       </Link>
 
       <div className="header__search">
-        <input type="text" className="header__searchInput" />
+        <input
+          type="text"
+          className="header__searchInput"
+          onChange={(e) => setSearch(e.target.value)}
+        />
         <SearchIcon className="header__searchIcon" />
       </div>
 
