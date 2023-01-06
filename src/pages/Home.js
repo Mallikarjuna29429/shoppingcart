@@ -10,8 +10,10 @@ function Home() {
   const getTotalQuantity = () => {
     let total = 0;
     cart.forEach((item) => {
+      console.log(item);
       total += item.quantity;
     });
+    console.log(total);
     return total;
   };
 
@@ -63,10 +65,10 @@ function Home() {
           />
         </div>
       </div>
-      <div className="shopping-cart" onClick={() => navigate("/cart")}>
+      {/* <div className="shopping-cart" onClick={() => navigate("/cart")}>
         <ShoppingCart id="cartIcon" />
         <p>{getTotalQuantity() || 0}</p>
-      </div>
+      </div> */}
     </div>
   );
 }
