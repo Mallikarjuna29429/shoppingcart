@@ -5,7 +5,7 @@ import { Routes, Route } from "react-router-dom";
 import Header from "./components/header";
 import React, { Component, useState, createContext } from "react";
 const SearchContext = createContext();
-
+//added comments
 function App() {
   const [search, setSearch] = useState("");
   return (
