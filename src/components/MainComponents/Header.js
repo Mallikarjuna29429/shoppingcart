@@ -4,8 +4,11 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function Header({ setSearch }) {
+  const loggedInUser = useSelector((state) => state.loggedInUser);
+  console.log(loggedInUser);
   return (
     <div className="header">
       <Link to="/" style={{ textDecoration: "none" }}>

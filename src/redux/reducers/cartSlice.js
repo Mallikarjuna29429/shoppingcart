@@ -6,12 +6,12 @@ const cartSlice = createSlice({
   initialState: {
     cart: [],
     users: [],
-    loggedInUser: null,
+    loggedInUser: { id: "", email: "", password: "" },
   },
   reducers: {
     logeedin: (state, action) => {
-      // return { ...state, loggedInUser: action.payload };
-      return { ...state, users: [...state.users, action.payload] };
+      // console.log(action.payload);
+      return { ...state, loggedInUser: action.payload };
     },
     Register: (state, action) => {
       return { ...state, users: [...state.users, action.payload] };
@@ -52,4 +52,5 @@ export const {
   decrementQuantity,
   removeItem,
   logeedin,
+  Register,
 } = cartSlice.actions;

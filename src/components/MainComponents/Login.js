@@ -3,19 +3,32 @@ import "../Css/Login.css";
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import { auth } from "../../firebase";
-
+import { useDispatch } from "react-redux";
+import { Register, logeedin } from "../../redux/reducers/cartSlice";
 function Login() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-
+  const dispatch = useDispatch();
   const signIn = (e) => {
     e.preventDefault();
 
     auth
       .signInWithEmailAndPassword(email, password)
       .then((auth) => {
-        history.push("/");
+        if (auth) {
+          dispatch(
+            logeedin({
+              type: "logeedin",
+              payload: {
+                id: new Date().getTime(),
+                email: email,
+                password: password,
+              },
+            })
+          );
+          history.push("/");
+        }
       })
       .catch((error) => alert(error.message));
   };
@@ -27,6 +40,9 @@ function Login() {
       .createUserWithEmailAndPassword(email, password)
       .then((auth) => {
         if (auth) {
+          dispatch(
+            Register({ type: "Register", payload: { email, password } })
+          );
           history.push("/");
         }
       })

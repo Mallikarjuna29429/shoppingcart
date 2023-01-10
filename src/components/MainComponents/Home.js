@@ -10,6 +10,8 @@ function Home({ search }) {
   const [APIData, setAPIData] = useState([]);
   const history = useHistory();
   const cart = useSelector((state) => state.cart);
+  const users = useSelector((state) => state.users);
+  // console.log(users);
 
   const handleClick = () => {
     history.push("/cart");
@@ -31,9 +33,6 @@ function Home({ search }) {
   useEffect(() => {
     fetchData();
   }, []);
-  const obj = Object.entries(APIData);
-
-  console.log(obj);
 
   return (
     <>

@@ -10,7 +10,6 @@ const SearchContext = createContext();
 
 function App() {
   const [search, setSearch] = useState("");
-  console.log(search);
   return (
     <SearchContext.Provider value={search}>
       <div className="app">
