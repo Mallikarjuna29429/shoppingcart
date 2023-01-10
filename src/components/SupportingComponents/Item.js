@@ -14,7 +14,7 @@ function Item({ id, title, image, price }) {
           <strong>{price}</strong>
         </p>
       </div>
-      <img src={image} alt="item" />
+      <img src={image} alt="item" className="click" />
       <button
         onClick={() =>
           dispatch(

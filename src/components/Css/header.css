@@ -11,7 +11,7 @@
 .header__logo {
   display: flex;
   align-items: center;
-  color: #ff9f00;
+  color: rgb(255, 136, 0);
   margin: 0 25px;
 }
 
@@ -56,7 +56,7 @@
   flex-direction: column;
   margin-left: 10px;
   margin-right: 10px;
-  color: white;
+  color: rgb(7, 3, 40);
 }
 
 .nav__itemLineOne {

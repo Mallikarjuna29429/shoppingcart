@@ -47,7 +47,7 @@ function Header({ setSearch }) {
       <div className="header__nav">
         {userEmail !== null ? (
           <div className="nav__item">
-            <span className="nav__itemLineOne">{`Hellow: ${loggedInUser.payload.email}`}</span>
+            <span className="nav__itemLineOne">{`Hellow, ${loggedInUser.payload.email}`}</span>
             <Link
               to="/logout"
               className="nav__itemLineTwo"
