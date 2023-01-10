@@ -1,6 +1,6 @@
 import "./home.css";
 import Item from "../components/Item";
-import { useNavigate } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ShoppingCart } from "@mui/icons-material";
 import { useEffect, useState } from "react";
@@ -8,10 +8,12 @@ import axios from "axios";
 
 function Home({ search }) {
   const [APIData, setAPIData] = useState([]);
-  // const [FilteredResults, setFilteredResults] = useState([]);
-  const navigate = useNavigate();
+  const history = useHistory();
   const cart = useSelector((state) => state.cart);
 
+  const handleClick = () => {
+    history.push("/cart");
+  };
   const getTotalQuantity = () => {
     let total = 0;
     cart.forEach((item) => {
@@ -53,7 +55,7 @@ function Home({ search }) {
             )}
           </div>
         </div>
-        <div className="shopping-cart" onClick={() => navigate("/cart")}>
+        <div className="shopping-cart" onClick={handleClick}>
           <ShoppingCart id="cartIcon" />
           <p>{getTotalQuantity() || 0}</p>
         </div>

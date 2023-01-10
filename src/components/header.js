@@ -4,7 +4,6 @@ import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 import StorefrontIcon from "@material-ui/icons/Storefront";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
-import { SettingsInputAntenna } from "@mui/icons-material";
 
 function Header({ setSearch }) {
   return (
