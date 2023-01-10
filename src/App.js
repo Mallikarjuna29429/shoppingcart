@@ -4,6 +4,7 @@ import Home from "./pages/Home";
 import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
 import Header from "./components/header";
 import React, { Component, useState, createContext } from "react";
+import Login from "./components/Login";
 const SearchContext = createContext();
 
 function App() {
@@ -17,6 +18,10 @@ function App() {
             <Route exact path="/">
               <Header setSearch={setSearch} />
               <Home search={search} />
+            </Route>
+            <Route exact path="/login">
+              <Header setSearch={setSearch} />
+              <Login search={search} />
             </Route>
             <Route path="/home">
               <Header setSearch={setSearch} />
