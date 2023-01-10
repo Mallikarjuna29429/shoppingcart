@@ -2,7 +2,7 @@
   height: 60px;
   display: flex;
   align-items: center;
-  background-color: #131921;
+  background-color: #a2ea1c;
   position: sticky;
   top: 0;
   z-index: 100;
@@ -68,7 +68,7 @@
   font-weight: 800;
 }
 .shopping-cart {
-  background-color: rgb(13, 12, 11);
+  background-color: rgb(207, 109, 11);
   position: relative;
   padding: 25px;
   border-radius: 100px;

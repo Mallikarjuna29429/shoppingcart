@@ -59,6 +59,7 @@ function Header({ setSearch }) {
           </div>
         ) : (
           <Link to="/login" style={{ textDecoration: "none" }}>
+            <span className="nav__itemLineTwo">{`Hellow Guest`}</span>
             <div className="nav__item">
               <span className="nav__itemLineTwo">Sin In</span>
             </div>
