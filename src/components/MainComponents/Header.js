@@ -5,10 +5,27 @@ import StorefrontIcon from "@material-ui/icons/Storefront";
 import SearchIcon from "@material-ui/icons/Search";
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { LogOut } from "../../redux/reducers/cartSlice";
 
 function Header({ setSearch }) {
+  const dispatch = useDispatch();
   const loggedInUser = useSelector((state) => state.loggedInUser);
-  console.log(loggedInUser);
+  var userEmail = null;
+  if (loggedInUser.payload !== null) {
+    userEmail = loggedInUser.payload.email;
+    console.log(userEmail);
+  }
+
+  const logout = () => {
+    console.log("dispacteed");
+    dispatch(
+      LogOut({
+        type: "LogOut",
+        payload: null,
+      })
+    );
+  };
   return (
     <div className="header">
       <Link to="/" style={{ textDecoration: "none" }}>
@@ -28,12 +45,25 @@ function Header({ setSearch }) {
       </div>
 
       <div className="header__nav">
-        <Link to="/login" style={{ textDecoration: "none" }}>
+        {userEmail !== null ? (
           <div className="nav__item">
-            <span className="nav__itemLineOne">Hello Guest</span>
-            <span className="nav__itemLineTwo">Sign In</span>
+            <span className="nav__itemLineOne">{`Hellow: ${loggedInUser.payload.email}`}</span>
+            <Link
+              to="/logout"
+              className="nav__itemLineTwo"
+              style={{ textDecoration: "none" }}
+              onClick={logout}
+            >
+              <span className="nav__itemLineTwo">LogOut</span>
+            </Link>
           </div>
-        </Link>
+        ) : (
+          <Link to="/login" style={{ textDecoration: "none" }}>
+            <div className="nav__item">
+              <span className="nav__itemLineTwo">Sin In</span>
+            </div>
+          </Link>
+        )}
         <div className="nav__item">
           <span className="nav__itemLineOne">Your</span>
           <span className="nav__itemLineTwo">Shop</span>

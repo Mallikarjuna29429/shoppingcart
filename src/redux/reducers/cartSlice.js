@@ -16,6 +16,10 @@ const cartSlice = createSlice({
     Register: (state, action) => {
       return { ...state, users: [...state.users, action.payload] };
     },
+    LogOut: (state, action) => {
+      console.log("Log out dispatched");
+      return { ...state, loggedInUser: action.payload };
+    },
     addToCart: (state, action) => {
       const itemInCart = state.cart.find((item) => item.id === action.payload);
       if (itemInCart) {
@@ -53,4 +57,5 @@ export const {
   removeItem,
   logeedin,
   Register,
+  LogOut,
 } = cartSlice.actions;

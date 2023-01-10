@@ -31,6 +31,10 @@ function App() {
               <Header setSearch={setSearch} />
               <Cart />
             </Route>
+            <Route path="/logout">
+              <Header setSearch={setSearch} />
+              <Login />
+            </Route>
           </Switch>
         </BrowserRouter>
       </div>
