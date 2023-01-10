@@ -35,16 +35,8 @@ function Login() {
 
   return (
     <div className="login">
-      {/* <Link to='/' style={{ textDecoration: "none" }}>
-                <div className="login__logo">
-                    <StorefrontIcon className="login__logoImage" fontSize="large" />
-                    <h2 className="login__logoTitle">eSHOP</h2>
-                </div>
-            </Link> */}
-
       <div className="login__container">
         <h1>Sign-in</h1>
-
         <form>
           <h5>E-mail</h5>
           <input
@@ -59,7 +51,6 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-
           <button
             type="submit"
             className="login__signInButton"
