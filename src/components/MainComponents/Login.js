@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import "./Login.css";
+import "../Css/Login.css";
 import { Link, useHistory } from "react-router-dom";
 import StorefrontIcon from "@material-ui/icons/Storefront";
-import { auth } from "./firebase";
+import { auth } from "../../firebase";
 
 function Login() {
   const history = useHistory();

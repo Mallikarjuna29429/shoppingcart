@@ -1,5 +1,5 @@
-import "./home.css";
-import Item from "../components/Item";
+import "../Css/home.css";
+import Item from "../SupportingComponents/Item";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ShoppingCart } from "@mui/icons-material";

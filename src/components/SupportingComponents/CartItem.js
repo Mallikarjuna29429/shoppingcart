@@ -1,11 +1,11 @@
-import "./cartItem.css";
+import "../Css/cartItem.css";
 import React, { Component } from "react";
 
 import {
   incrementQuantity,
   decrementQuantity,
   removeItem,
-} from "../redux/cartSlice";
+} from "../../redux/reducers/cartSlice";
 import { useDispatch } from "react-redux";
 
 function CartItem({ id, image, title, price, quantity = 0 }) {

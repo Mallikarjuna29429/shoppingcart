@@ -1,8 +1,8 @@
-import "./cart.css";
-import Total from "../components/Total";
-import CartItem from "../components/CartItem";
+import "../Css/cart.css";
 import { useSelector } from "react-redux";
 import React, { Component } from "react";
+import Total from "../SupportingComponents/Total";
+import CartItem from "../SupportingComponents/CartItem";
 
 function Cart() {
   const cart = useSelector((state) => state.cart);

@@ -1,11 +1,21 @@
 import { createSlice } from "@reduxjs/toolkit";
+import React, { Component } from "react";
 
-const cartSliceReducer = createSlice({
+const cartSlice = createSlice({
   name: "cart",
   initialState: {
     cart: [],
+    users: [],
+    loggedInUser: null,
   },
   reducers: {
+    logeedin: (state, action) => {
+      // return { ...state, loggedInUser: action.payload };
+      return { ...state, users: [...state.users, action.payload] };
+    },
+    Register: (state, action) => {
+      return { ...state, users: [...state.users, action.payload] };
+    },
     addToCart: (state, action) => {
       const itemInCart = state.cart.find((item) => item.id === action.payload);
       if (itemInCart) {
@@ -35,6 +45,11 @@ const cartSliceReducer = createSlice({
   },
 });
 
-export const { addToCart, incrementQuantity, decrementQuantity, removeItem } =
-  cartSliceReducer.actions;
-export const cartReducer = cartSliceReducer.reducer;
+export const cartReducer = cartSlice.reducer;
+export const {
+  addToCart,
+  incrementQuantity,
+  decrementQuantity,
+  removeItem,
+  logeedin,
+} = cartSlice.actions;

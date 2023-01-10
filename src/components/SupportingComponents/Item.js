@@ -1,6 +1,6 @@
-import "./item.css";
+import "../Css/item.css";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../redux/cartSlice";
+import { addToCart } from "../../redux/reducers/cartSlice";
 import React, { Component } from "react";
 
 function Item({ id, title, image, price }) {

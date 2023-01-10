@@ -1,6 +1,6 @@
-import "./total.css";
+import "../Css/total.css";
 import { useSelector } from "react-redux";
-import React, { Component }  from 'react';
+import React, { Component } from "react";
 
 function Total() {
   const cart = useSelector((state) => state.cart);

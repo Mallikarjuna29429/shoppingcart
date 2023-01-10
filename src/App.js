@@ -1,10 +1,11 @@
 import "./App.css";
-import Cart from "./pages/Cart";
-import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route, Switch } from "react-router-dom";
-import Header from "./components/header";
-import React, { Component, useState, createContext } from "react";
-import Login from "./components/Login";
+import React, { useState, createContext } from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Cart from "./components/MainComponents/Cart";
+import Home from "./components/MainComponents/Home";
+import Header from "./components/MainComponents/Header";
+import Login from "./components/MainComponents/Login";
+
 const SearchContext = createContext();
 
 function App() {
